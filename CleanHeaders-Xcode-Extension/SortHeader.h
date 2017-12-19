@@ -18,7 +18,7 @@ static inline NSArray *formatSelectionLines(NSArray *sourceLines, NSString* text
     NSString *frameworkImportPrefix = @"@import";
     NSString *traditionalIncludePrefix = @"#include";
     NSString *swiftPrefix = @"import";
-    
+    __block BOOL isSwift = NO;
     // Position of the first and last line of header, to be used for repalcement
     // of header content.
     NSInteger __block initalIndex = -1;
@@ -38,7 +38,7 @@ static inline NSArray *formatSelectionLines(NSArray *sourceLines, NSString* text
         [cleansedLine hasPrefix:traditionalIncludePrefix] ||
         [cleansedLine hasPrefix:frameworkImportPrefix] ||
         [cleansedLine hasPrefix:swiftPrefix];
-        
+        isSwift = [cleansedLine hasPrefix:swiftPrefix];
         // If the line is a header and no header element has been detected so far,
         // mark this as the start of the header segment.
         if (isLineHeader && initalIndex < 0) {
@@ -90,7 +90,15 @@ static inline NSArray *formatSelectionLines(NSArray *sourceLines, NSString* text
             [headerRows replaceObjectAtIndex:headerRows.count - 1 withObject:lastHeader];
         }
         // replace it in the array of all lines.
-        NSString *newImport = [NSString stringWithFormat:@"#import \"%@.h\"",text?:@"<#newImport#>"];
+     
+        NSString *newImport;
+        if (isSwift) {
+            newImport = [NSString stringWithFormat:@"import %@",text?:@"<#newImport#>"];
+        } else
+        {
+            newImport = [NSString stringWithFormat:@"#import \"%@.h\"",text?:@"<#newImport#>"];
+        }
+       
         [headerRows addObject:newImport];
         [lines replaceObjectsInRange:NSMakeRange(initalIndex,
                                                  (lastIndex - initalIndex))
