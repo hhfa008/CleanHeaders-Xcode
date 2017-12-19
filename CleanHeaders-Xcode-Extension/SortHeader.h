@@ -8,7 +8,7 @@
 
 #import <XcodeKit/XcodeKit.h>
 
-static inline NSArray *formatSelectionLines(NSArray *sourceLines) {
+static inline NSArray *formatSelectionLines(NSArray *sourceLines, NSString* text) {
     
     NSMutableArray *lines = [[NSMutableArray alloc] initWithArray:sourceLines];
     
@@ -90,6 +90,8 @@ static inline NSArray *formatSelectionLines(NSArray *sourceLines) {
             [headerRows replaceObjectAtIndex:headerRows.count - 1 withObject:lastHeader];
         }
         // replace it in the array of all lines.
+        NSString *newImport = [NSString stringWithFormat:@"#import \"%@.h\"",text?:@"<#newImport#>"];
+        [headerRows addObject:newImport];
         [lines replaceObjectsInRange:NSMakeRange(initalIndex,
                                                  (lastIndex - initalIndex))
                 withObjectsFromArray:headerRows];
@@ -102,6 +104,6 @@ static inline NSString *formatSelection(NSString *content) {
     
     // Convert the entire source into an array based on new lines.
     // Hence the imports have to be alteast in new line to work.
-    return [formatSelectionLines([content componentsSeparatedByString:@"\n"])
+    return [formatSelectionLines([content componentsSeparatedByString:@"\n"],nil)
             componentsJoinedByString:@""];
 }

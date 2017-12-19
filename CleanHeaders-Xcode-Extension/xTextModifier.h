@@ -17,7 +17,7 @@
  @return modified text
  */
 typedef NSString * (^xTextHandlerBlock) (NSString *text);
-typedef NSArray * (^xLineHandlerBlock) (NSArray *lines);
+typedef NSArray * (^xLineHandlerBlock) (NSArray *lines,NSString *text);
 
 @interface xTextModifier : NSObject
 

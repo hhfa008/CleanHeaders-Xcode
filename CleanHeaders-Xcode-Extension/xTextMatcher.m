@@ -65,11 +65,11 @@ typedef void (^xTextSelectionLineBlock) (NSInteger index, NSString *line, NSStri
         NSString *clipped;
         
         if (startLine == endLine) { // single line
-            clipped = [line substringWithRange:NSMakeRange(startColumn, endColumn-startColumn+1)];
+            clipped = [line substringWithRange:NSMakeRange(startColumn, endColumn-startColumn)];
         } else if (index == startLine) { // first line
             clipped = [line substringFromIndex:startColumn];
         } else if (index == endLine) { // last line
-            clipped = [line substringToIndex:endColumn+1];
+            clipped = [line substringToIndex:endColumn];
         } else { // common line
             clipped = line;
         }

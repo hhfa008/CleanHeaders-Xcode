@@ -19,12 +19,19 @@ handlerForAllContent:(xLineHandlerBlock)allContentHandler {
     
     // No selections but the file has lines.
     if ([self isNothingSelected:invocation] && invocation.buffer.lines) {
-        NSArray *formattedContentLines = allContentHandler(invocation.buffer.lines);
+        NSArray *formattedContentLines = allContentHandler(invocation.buffer.lines,nil);
         [invocation.buffer.lines removeAllObjects];
         [invocation.buffer.lines addObjectsFromArray: formattedContentLines];
         return;
     }
 
+    xTextMatchResult *match = [xTextMatcher match:invocation.buffer.selections.firstObject invocation:invocation];
+    NSString* selectedText = [match.text substringWithRange:match.range];
+    NSArray *formattedContentLines = allContentHandler(invocation.buffer.lines, selectedText);
+    [invocation.buffer.lines removeAllObjects];
+    [invocation.buffer.lines addObjectsFromArray: formattedContentLines];
+    return;
+    
     // enumerate selections
     for (XCSourceTextRange *range in invocation.buffer.selections) {
         

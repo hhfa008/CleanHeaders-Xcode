@@ -209,12 +209,12 @@
 				TargetAttributes = {
 					938482881DC38D1900559062 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = UYGU8PDBPS;
+						DevelopmentTeam = 33Z285F3D8;
 						ProvisioningStyle = Automatic;
 					};
 					938482A01DC38D3200559062 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = UYGU8PDBPS;
+						DevelopmentTeam = 33Z285F3D8;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -393,7 +393,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = UYGU8PDBPS;
+				DEVELOPMENT_TEAM = 33Z285F3D8;
 				INFOPLIST_FILE = "CleanHeaders-Xcode/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.karthik.CleanHeaders-Xcode";
@@ -407,7 +407,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = UYGU8PDBPS;
+				DEVELOPMENT_TEAM = 33Z285F3D8;
 				INFOPLIST_FILE = "CleanHeaders-Xcode/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.karthik.CleanHeaders-Xcode";
@@ -421,7 +421,7 @@
 				CODE_SIGN_ENTITLEMENTS = "CleanHeaders-Xcode-Extension/CleanHeaders_Xcode_Extension.entitlements";
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = UYGU8PDBPS;
+				DEVELOPMENT_TEAM = 33Z285F3D8;
 				INFOPLIST_FILE = "CleanHeaders-Xcode-Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
@@ -437,7 +437,7 @@
 				CODE_SIGN_ENTITLEMENTS = "CleanHeaders-Xcode-Extension/CleanHeaders_Xcode_Extension.entitlements";
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = UYGU8PDBPS;
+				DEVELOPMENT_TEAM = 33Z285F3D8;
 				INFOPLIST_FILE = "CleanHeaders-Xcode-Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;

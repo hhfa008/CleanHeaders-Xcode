@@ -28,7 +28,7 @@
                       @"com.karthik.cleanHeader-Xcode":
                           ^NSString *(NSString *text) { return formatSelection(text); },
                       @"all_source":
-                          ^NSArray *(NSArray *lines) { return formatSelectionLines(lines); }
+                          ^NSArray *(NSArray *lines,NSString* text) { return formatSelectionLines(lines,text); }
                       };
     });
     return _instance;
